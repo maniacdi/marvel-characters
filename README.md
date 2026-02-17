@@ -1,130 +1,149 @@
-# Portfolio
+# 🦸 Marvel Explorer
 
-Una aplicación React para explorar y ver detalles de personajes del universo Marvel, con funcionalidades de favoritos y una experiencia de usuario mejorada.
+Aplicación interactiva para explorar el universo Marvel utilizando la API oficial de Marvel. Busca personajes, comics, series y eventos del universo cinematográfico y de cómics de Marvel.
 
-## Tabla de Contenidos
+## 📋 Descripción
 
-1. [Características](#características)
-2. [Tecnologías Utilizadas](#tecnologías-utilizadas)
-3. [Estructura del Proyecto](#estructura-del-proyecto)
-4. [Instalación y Configuración](#instalación-y-configuración)
-5. [Arquitectura](#arquitectura)
-6. [Linting y Formateo](#linting-y-formateo)
-7. [Run Locally](#run-locally)
-8. [Autores](#autores)
-9. [License](#license)
+Marvel Explorer es un proyecto que integra la Marvel API oficial para proporcionar una experiencia de exploración del extenso catálogo de Marvel. Implementa búsqueda, filtrado y visualización de personajes, cómics y series con una interfaz moderna.
 
-## Características
+## ✨ Características
 
-- Conocer al desarrollador
-- Ver y jugar con diferentes componentes
-- Visualización de personajes de Marvel.
-- Detalles completos sobre cada personaje.
-- Capacidad para marcar personajes como favoritos.
-- Interfaz de usuario interactiva y responsiva.
+- 🦸 Búsqueda de personajes de Marvel
+- 📚 Exploración de cómics y series
+- 🔍 Filtros avanzados por categorías
+- 📊 Visualización de estadísticas
+- 🎨 Interfaz responsive y moderna
+- ⚡ Sistema de caché optimizado
 
-## Tecnologías Utilizadas
+## 🛠️ Tecnologías
 
-- **React**: Biblioteca de JavaScript para construir interfaces de usuario.
-- **TypeScript**: Superset de JavaScript que proporciona tipos estáticos.
-- **SCSS**: Hojas de estilo en cascada con funcionalidades adicionales.
-- **React Router**: Manejo de rutas en la aplicación.
-- **ESLint**: Herramienta para identificar y reportar patrones en el código.
-- **Prettier**: Herramienta de formateo de código.
-- **React Context API**: Gestión del estado global de la aplicación.
+- **Framework:** React/Next.js (o tu stack actual)
+- **Lenguaje:** TypeScript
+- **API:** Marvel API
+- **Styling:** CSS/SCSS
+- **HTTP Client:** Axios/Fetch
 
-## Estructura del Proyecto
+## 🚀 Instalación
 
-/portfolio
-│
-├── /public
-│ └── index.html # Archivo HTML principal
-│
-├── /src
-│ ├── /components # Componentes reutilizables de React
-│ ├── /context # Contextos y proveedores
-│ ├── /pages # Vistas principales de la aplicación
-│ ├── /assets # Recursos estáticos (imágenes, íconos, etc.)
-│ ├── /hooks # Custom hooks
-│ ├── /styles # Archivos SCSS
-│ ├── App.tsx # Componente raíz de la aplicación
-│ └── index.tsx # Punto de entrada de la aplicación
-│
-├── .eslint.config.js # Configuración de ESLint
-├── .prettierrc # Configuración de Prettier
-├── package.json # Dependencias y scripts del proyecto
-└── README.md # Documentación del proyecto
+```bash
+# Clonar el repositorio
+git clone https://github.com/maniacdi/marvel-explorer.git
 
-## Instalación y Configuración
-
-1. **Clona el repositorio:**
-
-   git clone https://github.com/tu-usuario/portfolio.git
-   cd portfolio
-
-2. **Instala las dependencias:**
-
-Asegúrate de tener Node.js (recomendado LTS) y npm instalados en tu sistema.
-
+# Instalar dependencias
 npm install
 
-3. **Inicia la aplicación:**
-
-   npm start
-   La aplicación estará disponible en http://localhost:3000.
-
-## Arquitectura
-
-La arquitectura de la aplicación está diseñada para ser modular y escalable. A continuación se describen los componentes clave:
-
-- **Componentes**: La carpeta `/components` contiene componentes reutilizables de React. Cada componente está diseñado para cumplir una función específica en la interfaz de usuario.
-- **Contexto**: En `/context`, se encuentran los contextos y proveedores que gestionan el estado global de la aplicación. Esto permite compartir datos entre componentes sin necesidad de pasar props manualmente.
-- **Páginas**: La carpeta `/pages` incluye las vistas principales de la aplicación, cada una representando una pantalla o sección de la misma.
-- **Recursos**: Los recursos estáticos como imágenes y íconos se encuentran en `/assets`.
-- **Hooks**: Los hooks personalizados se encuentran en `/hooks` y se utilizan para encapsular la lógica reutilizable y el estado compartido.
-
-## Linting y Formateo
-
-La aplicación utiliza ESLint y Prettier para mantener la calidad del código y asegurar un estilo uniforme. Aquí están los detalles de cómo están configurados:
-
-- **ESLint**: Se utiliza para identificar y reportar patrones en el código que podrían ser problemáticos. La configuración de ESLint se encuentra en el archivo `.eslint.config.js`. Se recomienda ejecutar el linting con el comando:
-
-  npm run lint
-
-- **Prettier**: Se encarga del formateo automático del código para mantener un estilo consistente. La configuración de Prettier está en el archivo .prettierrc. Puedes formatear el código ejecutando:
-
-npm run format
-
-## Run Locally
-
-Clone the project
-
-```bash
-  git clone https://github.com/maniacdi/portfolio.git
+# Configurar API Key de Marvel
+cp .env.example .env
+# Editar .env y agregar tu Marvel API Key
 ```
 
-Go to the project directory
+### 🔑 Obtener Marvel API Key
 
-```bash
-  cd portfolio
+1. Regístrate en [Marvel Developer Portal](https://developer.marvel.com/)
+2. Crea una aplicación
+3. Copia tu Public Key y Private Key
+4. Agrégalas a tu archivo `.env`:
+
+```env
+MARVEL_PUBLIC_KEY=tu_public_key_aqui
+MARVEL_PRIVATE_KEY=tu_private_key_aqui
 ```
 
-Install dependencies
-
 ```bash
-  npm install
+# Ejecutar en modo desarrollo
+npm run dev
 ```
 
-Start the server
+## 📡 Funcionalidades
 
-```bash
-  npm run start
+### Búsqueda de Personajes
+```typescript
+// Ejemplo de uso
+searchCharacter("Spider-Man")
+  .then(character => console.log(character));
 ```
 
-## Authors
+### Explorar Cómics
+- Filtrar por serie
+- Ordenar por fecha de publicación
+- Ver detalles completos
 
-- [@maniacdi](https://www.github.com/maniacdi)
+### Exploración de Series
+- Timeline de eventos
+- Información de creadores
+- Covers y artwork
 
-## License
+## 📂 Estructura
 
-[![MIT License](https://img.shields.io/badge/License-MIT-green.svg)](https://choosealicense.com/licenses/mit/)
+```
+marvel-explorer/
+├── src/
+│   ├── components/     # Componentes React
+│   ├── services/       # Integración con Marvel API
+│   ├── hooks/          # Custom hooks
+│   ├── utils/          # Utilidades y helpers
+│   └── types/          # Tipos TypeScript
+├── public/             # Assets estáticos
+└── .env.example        # Template de variables de entorno
+```
+
+## 🎯 Endpoints Implementados
+
+- `/characters` - Listado de personajes
+- `/characters/:id` - Detalle de personaje
+- `/comics` - Exploración de cómics
+- `/series` - Series de Marvel
+- `/events` - Eventos del universo Marvel
+
+## 🖼️ Capturas
+
+*(Agrega aquí capturas de tu aplicación cuando las tengas)*
+
+## 🔐 Autenticación Marvel API
+
+La Marvel API requiere autenticación mediante:
+- Public Key
+- Private Key
+- Timestamp
+- Hash MD5
+
+Este proyecto maneja automáticamente la autenticación en cada petición.
+
+## 📊 Límites de la API
+
+- 3000 peticiones por día
+- Rate limit: 100 peticiones por minuto
+- Sistema de caché implementado para optimizar consumo
+
+## 🚧 Roadmap
+
+- [ ] Sistema de favoritos persistente
+- [ ] Comparador de personajes
+- [ ] Quiz interactivo
+- [ ] Integración con Marvel Cinematic Universe timeline
+- [ ] Modo oscuro
+
+## 🐛 Problemas Conocidos
+
+- La Marvel API puede tener delays ocasionales
+- Algunas imágenes pueden no estar disponibles
+- Ciertos personajes antiguos tienen información limitada
+
+## 👤 Autor
+
+**Javier García Magaldi**
+- GitHub: [@maniacdi](https://github.com/maniacdi)
+- Portfolio: [magaldidev.com](https://magaldidev.com)
+
+## 📄 Licencia
+
+Este proyecto es de código abierto y está disponible bajo la licencia MIT.
+
+## 🙏 Agradecimientos
+
+- [Marvel API](https://developer.marvel.com/) por proporcionar acceso a su base de datos
+- Comunidad de desarrolladores de Marvel
+
+---
+
+**Nota:** Este proyecto usa la Marvel API oficial. Data provided by Marvel. © 2024 MARVEL
